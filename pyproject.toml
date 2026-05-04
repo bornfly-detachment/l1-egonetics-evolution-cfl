@@ -1,0 +1,13 @@
+[project]
+name = "egonetics-evolution"
+version = "0.1.0"
+description = "Egonetics Evolution Layer — autonomous LLM training experiments (karpathy autoresearch + DeepSeekV4 MoE)"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.5",
+]
+
+[project.scripts]
+prepare = "prepare:main"
+train = "train:main"
+dsv4 = "mini_dsv4:main"
