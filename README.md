@@ -37,3 +37,9 @@ Driven by TypeScript `experiment-runner.ts` via `seai-bridge.ts`:
 2. `train.py --exp-id <id>` or `mini_dsv4.py --exp-id <id>` — runs training
 3. Parses val_loss from stdout JSON
 4. Keeps or discards based on metric improvement
+
+## Ecosystem runtime CFL (2026-05-18)
+
+The PRD-driven Evolution ecosystem runtime lives in `ecosystem-runtime/`. It is a Go runtime that reuses the standalone P/R/V/S CFL projects and preserves the corrected 2026-05-17/18 PRD semantics: open tasks, non-exclusive claims, independent seed runtimes, free communication, V-owned evaluation dimensions, and user resource injection rather than user payment.
+
+See `CHRONICLE.md` and `ecosystem-runtime/README.md` for the Chronicle ↔ Git handoff record.
