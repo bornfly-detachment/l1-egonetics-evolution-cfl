@@ -1,0 +1,38 @@
+{
+  "action": "bootstrap",
+  "state_dir": "/tmp/evolution-state",
+  "ecosystem_id": "demo",
+  "boot": {
+    "force": true,
+    "initial_directions": [
+      {
+        "direction_id": "self-cognition",
+        "title": "Self cognition loop",
+        "paradigm_seed_text": "Self cognition requires a realtime self-state register rather than a prompt illusion."
+      }
+    ],
+    "initial_tasks": [
+      {
+        "origin": "bornfly_boot",
+        "difficulty": "L0",
+        "task_type": "programming",
+        "goal": "prove a seed can read and report a toy state register",
+        "resources": {
+          "api_token": 5
+        },
+        "base_reward": {
+          "api_token": 10
+        },
+        "breakthrough_reward": {
+          "api_token": 30
+        },
+        "constitution": [
+          "no external framework"
+        ],
+        "resource_injection": {
+          "api_token": 10
+        }
+      }
+    ]
+  }
+}
