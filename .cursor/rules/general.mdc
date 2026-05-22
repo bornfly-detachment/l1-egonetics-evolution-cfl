@@ -1,0 +1,30 @@
+---
+description: Egonetics 工作区 Cursor 总边界（中文）
+alwaysApply: true
+---
+
+# 工作区边界
+
+## 范围（硬性）
+
+- **训练**：`/Users/Shared/egonetics-evolution`
+- **前端（`main`）**：
+  - Web：`/Users/Shared/egonetics` ← `bornfly-detachment/egonetics`（须为 **git clone 仓库根**，非已删的旧嵌套 `egonetics/main/`）
+  - Desktop：`/Users/Shared/egonetics-desktop` ← `bornfly-detachment/egonetics-desktop`
+- **禁止**扫改 `/Users/Shared` 下其它无关目录。
+- **勿**在 `egonetics-opencode`、`opencode-egonetics-desktop` 做新功能。
+- **`prvse-world-workspace` 已归档**（后继 `egonetics-core`）：勿引用 `/Users/Shared/prvse_world_workspace`、勿建议其 config 软链。
+- SEAI、`egonetics-core` 等外部路径默认只读（前端改 core 需用户点名）。
+
+## PRVSE 边界
+
+- 前端 = UI / 协作；SEAI = 训练内核；用户可配置项须 CRUD 端到端。
+
+## 改动纪律
+
+- 先读再改；不提交除非用户明确要求。
+- 配置类文件可改；`prepare.py` / `train.py` / 前端业务代码仅用户点名时改。
+
+## 多根工作区
+
+`/Users/Shared/egonetics-dev.code-workspace`。规则锚点：`egonetics-evolution/project_config.md`。

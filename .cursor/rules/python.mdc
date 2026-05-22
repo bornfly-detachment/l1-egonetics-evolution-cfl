@@ -1,0 +1,38 @@
+---
+description: Evolution 层 Python 训练脚本约定
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Python（egonetics-evolution）
+
+## 三文件分工（karpathy autoresearch）
+
+| 文件 | 编辑者 | 用途 |
+|------|--------|------|
+| `prepare.py` | **人类固定** | 经 SEAI `data_gen` 生成训练数据；Agent **勿改** |
+| `train.py` | Agent | GPT + MoE 训练循环 |
+| `mini_dsv4.py` | Agent | Mini DeepSeek-V4（MLA + MoE） |
+
+## SEAI
+
+- 根路径：`/Users/Shared/SubjectiveEgoneticsAI`（`prepare.py` 已 `sys.path` 注入）
+- 实验产物目录：`~/.egonetics/experiments/<exp-id>/`
+
+## 常用命令
+
+```bash
+cd /Users/Shared/egonetics-evolution
+python prepare.py --exp-id <id> [--data-type sft|grpo]
+python train.py --exp-id <id>
+python mini_dsv4.py --scale tiny   # tiny|small|medium|base
+python mini_dsv4.py --exp-id <id>
+```
+
+- 依赖：`pyproject.toml`（Python ≥3.11，`torch>=2.5`）
+- 训练 stdout 应输出可解析的 **val_loss JSON**（供 experiment-runner 消费）
+
+## 风格
+
+- 保持单文件、Agent 可编辑、固定时间预算、指标驱动 keep/discard。
+- 改 `train.py` / `mini_dsv4.py` 时避免牵动 `prepare.py` 与 SEAI 内部实现。

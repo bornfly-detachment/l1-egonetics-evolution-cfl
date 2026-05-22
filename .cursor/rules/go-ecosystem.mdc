@@ -1,0 +1,33 @@
+---
+description: ecosystem-runtime Go CFL 生态运行时
+globs: ecosystem-runtime/**/*.go
+alwaysApply: false
+---
+
+# Go — ecosystem-runtime
+
+## 定位
+
+- PRD 驱动的 **Evolution 生态运行时**（非新 PRVSE 层、非新 CFL）
+- 复用仓库外 P/R/V/S CFL；语义见 `ecosystem-runtime/README.md`、`PRD-COVERAGE.md`
+
+## 关键语义（5-18 修正版）
+
+- Open Task、非排他 claim、多种子独立 runtime
+- V 拥有评估维度；`submit_solution` 必须跑 V CFL，不接受外部伪造 verdict
+- 资源注入（`resource_injection`）≠ 商业支付；L2 禁用外部 API
+
+## 开发
+
+```bash
+cd /Users/Shared/egonetics-evolution/ecosystem-runtime
+go test ./...
+go run ./cmd/evolutionctl < examples/bootstrap.json
+```
+
+- CLI：`evolutionctl` stdin/stdout JSON；状态默认 `.evolution-state/<ecosystem_id>.json`
+- 改 `internal/evo/` 时同步考虑 `engine_test.go` 与 `examples/bootstrap.json`
+
+## 边界
+
+- 不在这里改 Python 训练脚本；与 SEAI 的集成走既有 CFL 路径与 chronicle 记录。

@@ -1,0 +1,34 @@
+---
+description: egonetics-desktop Electron 壳（bornfly-detachment/egonetics-desktop main）
+globs: /Users/Shared/egonetics-desktop/**/*
+alwaysApply: false
+---
+
+# Desktop — egonetics-desktop
+
+> 仓库：`https://github.com/bornfly-detachment/egonetics-desktop`（`main`）  
+> 本地根目录：`/Users/Shared/egonetics-desktop`（**不是** `opencode-egonetics-desktop`）
+
+## 角色
+
+- Electron + node-pty **L2 控制面壳**；与 Web 大前端分工，不承载训练逻辑
+- 依赖 `@egonetics/core`（`file:../egonetics-core`）
+
+## 技术栈
+
+- Electron 33、TypeScript、`src/main` + `src/renderer`
+- xterm、node-pty
+
+## 常用命令
+
+```bash
+cd /Users/Shared/egonetics-desktop
+npm install
+npm run build && npm run lint
+npm run dev
+```
+
+## 边界
+
+- 不把 SEAI / `prepare.py` / experiment-runner 放进 desktop 仓
+- Web 路由与 PRVSE 主 UI 在 **egonetics** Web 仓

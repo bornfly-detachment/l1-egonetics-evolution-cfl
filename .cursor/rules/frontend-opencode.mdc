@@ -1,0 +1,11 @@
+---
+description: "[已废弃] egonetics-opencode worktree"
+globs: /Users/Shared/egonetics-opencode/**/*
+alwaysApply: false
+---
+
+# 已废弃 — egonetics-opencode
+
+OpenCode 历史 worktree。新开发在 **`/Users/Shared/egonetics`**（从 GitHub 全新 clone 的 `main`）。
+
+旧 `/Users/Shared/egonetics` 嵌套 `main/` 布局已删除，与本 worktree 无关。

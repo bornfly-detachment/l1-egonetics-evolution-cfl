@@ -1,0 +1,28 @@
+---
+description: egonetics Web 大前端（bornfly-detachment/egonetics main）
+globs: /Users/Shared/egonetics/**/*
+alwaysApply: false
+---
+
+# Web 前端 — egonetics
+
+> GitHub：`bornfly-detachment/egonetics`（`main`）  
+> 本地：`/Users/Shared/egonetics`（**git 仓库根**；旧含 `main/` 子目录的遗留目录已删除，勿混淆）
+
+## 角色
+
+大前端 UI Shell；PRVSE、任务、Chronicle。禁止迁入训练 / SEAI / experiment-runner。
+
+## 技术栈
+
+React 18 + TS + Vite（:3000）；Express + SQLite（`server/` :3002）；Zustand、Tailwind、CodeMirror。
+
+## 命令
+
+```bash
+cd /Users/Shared/egonetics
+npm install && cd server && npm install && cd ..
+./start.sh && npm run build && npm run lint
+```
+
+见 `project_config.md`（clone 与废弃路径）。

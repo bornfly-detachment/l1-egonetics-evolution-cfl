@@ -1,0 +1,27 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.venvPath": "${workspaceFolder}",
+  "python.venvFolders": ["${workspaceFolder}"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.testing.pytestEnabled": false,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    },
+    "editor.tabSize": 4
+  },
+  "ruff.interpreter": ["${workspaceFolder}/.venv/bin/python"],
+  "ruff.nativeServer": true,
+  "ruff.lineLength": 100,
+  "files.associations": {
+    "prepare.py": "python",
+    "train.py": "python",
+    "mini_dsv4.py": "python"
+  }
+}

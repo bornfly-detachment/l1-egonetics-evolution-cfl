@@ -1,0 +1,34 @@
+---
+description: Evolution 相关 TypeScript / 实验编排约定
+globs: "**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# TypeScript（evolution 仓内）
+
+## Experiment Runner 模式
+
+README 约定编排链（实现可能在 `egonetics-core` / salvage，或后续迁入本仓）：
+
+1. `prepare.py --exp-id <id>`
+2. `train.py` 或 `mini_dsv4.py --exp-id <id>`
+3. 解析 stdout **val_loss JSON**
+4. V-gate：**改进则 keep，否则 discard**；连续 discard 达上限则停臂
+
+参考实现：`egonetics-core-salvage/src/kernel/experiment/experiment-runner.ts`、`seai-bridge.ts`。
+
+## 约定
+
+- `ExperimentRunner`：registry 状态、`runLoop`、`GitOperations` 与 arm 描述
+- `seai-bridge`：子进程调 Python，收集 `TrainResult`
+- 配置从 arm JSON 解析（如 `data_type` sft|grpo、`learning_rate`、`lora_rank`）
+- 新增 TS 时保持 **Node ESM**（`.js` 导入后缀）与同目录类型一致
+
+## 验证
+
+```bash
+# 若本仓有 package.json / tsc
+npm run build 2>/dev/null || npx tsc --noEmit
+```
+
+无 TS 文件时本规则不触发；跨仓前端见 `frontend-opencode.mdc`。
